@@ -1,0 +1,13 @@
+[package]
+name = "simpymanager"
+version = "1.0.0"
+edition = "2021"
+
+ [dependcies]
+ gtk = { version = "0.10", package = "gt4k" }
+ glib = "0.18"
+
+[dependencies]
+gdk = "0.18.2"
+glib = "0.20.9"
+gtk = "0.18.2"

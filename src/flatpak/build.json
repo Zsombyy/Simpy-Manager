@@ -1,0 +1,20 @@
+{
+    "app-id": "dev.cubxy.SimpyManager",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "21.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "simpymanager",
+    "modules": [
+        {
+            "name": "simpymanager",
+            "buildsystem": "cargo",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/Zsombyy/Simpy-Manager.git",
+                    "branch": "main"
+                }
+            ]
+        }
+    ]
+}

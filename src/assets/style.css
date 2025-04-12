@@ -1,0 +1,17 @@
+.title-label {
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.desc_label {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.custom_button {
+    background-color: #005f73;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 16px;
+}
