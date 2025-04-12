@@ -1,15 +1,26 @@
-app-id: dev.cubxy.SimpManager
-runtime: org.freedesktop.Platform
-runtime-version: "23.08"
-sdk: org.freedesktop.Sdk
+app-id: dev.cubxy.SimpyManager
+runtime: org.gnome.Platform
+runtime-version: '42'  # You can also use '41' or '40' based on availability
+sdk: org.gnome.Sdk
+sdk-version: '42'  # Use the same version here
 command: simpymanager
-finish-args:
-  - --share=network
-  - --filesystem=home
-
 modules:
   - name: simpymanager
     buildsystem: cargo
+    builddir: builddir
     sources:
-      - type: dir
-        path: .
+      - type: git
+        url: "https://github.com/Zsombyy/Simpy-SimpyManager.git"  # Replace with your repository URL
+        tag: "1.0.0"  # Replace with the version or tag you want to use
+    config-opts:
+      - "--release"
+    dependencies:
+      - gtk
+    cleanup:
+      - /lib/modules
+      - /lib/firmware
+    post-install: |
+      mkdir -p /app/share/icons/hicolor/scalable/apps
+      cp -r icon.png /app/share/icons/hicolor/scalable/apps/
+      mkdir -p /app/share/applications
+      cp -r dev.cubxy.SimpyManager.desktop /app/share/applications/
